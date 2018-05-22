@@ -1,0 +1,19 @@
+server:
+  port: 7901
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7900/eureka/
+
+spring:
+  application:
+    name: springcloud-zuul
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: springcloud-provider
+    api-b:
+      path: /api-b/**
+      serviceId: springcloud-provider2
