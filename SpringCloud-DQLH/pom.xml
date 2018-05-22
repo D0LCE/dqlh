@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.alicehz</groupId>
-	<artifactId>springcloud-dqlh</artifactId>
+	<artifactId>springcloud-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>springcloud-dqlh</name>
+	<name>springcloud-demo</name>
 	<description>Demo project for Spring Cloud</description>
 
 

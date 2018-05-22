@@ -1,0 +1,22 @@
+#设置注册中心端口号
+server:
+  port: 7900
+
+#配置注册中心
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: false
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7900/eureka
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 4000
+
+#配置注册中心微服务名
+spring:
+  application:
+    name: springcloud-eureka
+
