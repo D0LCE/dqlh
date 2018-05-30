@@ -1,0 +1,31 @@
+#
+# 版权所有：大千连和（深圳）网络科技有限公司 2018
+#   描述: 生产者2微服务配置文件
+#
+#   注意：
+#
+#   修改记录：
+#   修改人    日期          修改内容
+#   ------------------------------------------------------------
+#   yuantli  2018/05/26 -  创建
+#
+#
+
+#服务端口号
+server:
+  port: 7701
+
+#注册中心配置
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:7900/eureka
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/
+
+#微服务配置
+spring:
+  application:
+    name: dqcloud-provider2

@@ -1,0 +1,33 @@
+#
+# 版权所有：大千连和（深圳）网络科技有限公司 2018
+#   描述: 微服务消费者Spring配置文件
+#
+#   注意：
+#
+#   修改记录：
+#   修改人    日期          修改内容
+#   ------------------------------------------------------------
+#   yuantli  2018/05/26 -  创建
+#
+#
+
+#设置服务端口
+server:
+  port: 7800
+
+#设置注册中心信息
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:7900/eureka/
+
+#设置服务名
+spring:
+  application:
+    name: dqcloud-consumer
+
+#启用熔断器
+feign:
+  hystrix:
+    enabled: true

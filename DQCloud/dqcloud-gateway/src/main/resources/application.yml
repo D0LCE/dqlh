@@ -1,0 +1,32 @@
+#
+# 版权所有：大千连和（深圳）网络科技有限公司 2018
+#   描述: 网关路由配置
+#
+#   注意：无
+#
+#   修改记录：
+#   修改人    日期          修改内容
+#   ------------------------------------------------------------
+#   yuantli  2018/05/26 -  创建
+#
+#
+
+server:
+  port: 7901
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7900/eureka/
+
+spring:
+  application:
+    name: dqcloud-gateway
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: dqcloud-consumer
+    api-b:
+      path: /api-b/**
+      serviceId: dqcloud-provider2
