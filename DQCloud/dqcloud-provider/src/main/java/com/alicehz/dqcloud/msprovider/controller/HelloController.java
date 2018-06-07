@@ -1,15 +1,14 @@
 /**
-  * 版权所有：大千连和（深圳）网络科技有限公司 2018
-  *   描述: 生产者服务控制层用例 1
-  *
-  *   注意：
-  *
-  *   修改记录：
-  *   修改人    日期         修改内容
-  *   ------------------------------------------------------------
-  *   yuantli  18/05/26  -  创建
-  *
-  */
+ * 版权所有：大千连和（深圳）网络科技有限公司 2018
+ * 描述: 生产者服务控制层用例 1
+ * <p>
+ * 注意：
+ * <p>
+ * 修改记录：
+ * 修改人    日期         修改内容
+ * ------------------------------------------------------------
+ * yuantli  18/05/26  -  创建
+ */
 
 package com.alicehz.dqcloud.msprovider.controller;
 
@@ -19,14 +18,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
-public class HelloController {
+public class HelloController
+{
 
     @Autowired
     private Hi hi;
 
     @GetMapping("/hi/{user}")
-    public String findById(@PathVariable String user) {
+    public String findById(@PathVariable String user)
+    {
 
         return hi.hello(user);
     }

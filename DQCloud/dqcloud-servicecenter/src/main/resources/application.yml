@@ -33,3 +33,9 @@ spring:
   application:
     name: dqcloud-servicecenter
 
+  datasource:
+      platform: mysql
+      url: jdbc:mysql://111.230.170.178:3306/alicerp?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=true
+      username: root
+      password: jingyupaopao666!
+      driver-class-name: com.mysql.jdbc.Driver

@@ -1,15 +1,14 @@
 /**
-  * 版权所有：大千连和（深圳）网络科技有限公司 2018
-  *   描述: 网关过滤器类
-  *
-  *   注意：无
-  *
-  *   修改记录：
-  *   修改人    日期         修改内容
-  *   ------------------------------------------------------------
-  *   yuantli  18/05/26  -  创建
-  *
-  */
+ * 版权所有：大千连和（深圳）网络科技有限公司 2018
+ * 描述: 网关过滤器类
+ * <p>
+ * 注意：无
+ * <p>
+ * 修改记录：
+ * 修改人    日期         修改内容
+ * ------------------------------------------------------------
+ * yuantli  18/05/26  -  创建
+ */
 
 package com.alicehz.dqcloud.msgateway;
 
@@ -20,37 +19,47 @@ import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class MyFilter extends ZuulFilter{
+
+public class MyFilter extends ZuulFilter
+{
     private static Logger log = LoggerFactory.getLogger(MyFilter.class);
 
     @Override
-    public String filterType() {
+    public String filterType()
+    {
         return "pre";
     }
 
     @Override
-    public int filterOrder() {
+    public int filterOrder()
+    {
         return 0;
     }
 
     @Override
-    public boolean shouldFilter() {
+    public boolean shouldFilter()
+    {
         return true;
     }
 
     @Override
-    public Object run() {
+    public Object run()
+    {
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
-        log.info(String.format("%s >>> %s", request.getMethod(), request.getRequestURL().toString()));
+        log.info(
+            String.format("%s >>> %s", request.getMethod(), request.getRequestURL().toString()));
         Object accessToken = request.getParameter("token");
-        if(accessToken == null) {
+        if (accessToken == null)
+        {
             log.warn("token is empty");
             ctx.setSendZuulResponse(false);
             ctx.setResponseStatusCode(401);
-            try {
+            try
+            {
                 ctx.getResponse().getWriter().write("token is empty");
-            }catch (Exception e){}
+            }
+            catch (Exception e) {}
 
             return null;
         }

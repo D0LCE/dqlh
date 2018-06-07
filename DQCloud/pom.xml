@@ -18,6 +18,9 @@
 		<module>dqcloud-provider2</module>
 		<module>dqcloud-servicecenter</module>
 		<module>dqcloud-gateway</module>
+		<module>dqcloud-userbehaviorrecord</module>
+		<module>dqcloud-audiomanagement</module>
+		<module>dqcloud-recommend</module>
 	</modules>
 
 	<properties>
